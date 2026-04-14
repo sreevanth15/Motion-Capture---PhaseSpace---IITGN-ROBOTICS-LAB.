@@ -1,0 +1,10 @@
+PSP/x64/
+PSP/Release/
+x64/
+Release/
+socket_server/x64/
+socket_server/Release/
+.vs/
+
+# ignore all json files
+*.json
