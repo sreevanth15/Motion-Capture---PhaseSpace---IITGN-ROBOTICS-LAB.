@@ -8,6 +8,8 @@
 This guide is currently for the **Windows setup only**.
 Linux setup documentation will be added in a future update.
 
+For a new computer, configure a **static IPv4 address** on the Ethernet adapter before trying to connect to the PhaseSpace server (same subnet as the server, example network `192.168.1.x`).
+
 ## Startup flow chart (do this first)
 
 ```mermaid
@@ -24,13 +26,25 @@ flowchart TD
 ```
 
 Short sequence:
-1. Switch on server and cameras.
-2. Confirm server is connected to a monitor.
-3. Check cabling and network.
-4. Open web Configuration Manager and login with `admin / phasespace`.
-5. Open Master Client app and connect to the server.
-6. If server terminal/admin access is needed, use `root / phasespace`.
-7. Start Python code.
+1. Switch on hardware in order:
+    - Turn on the PhaseSpace hub first.
+    - Turn on the PhaseSpace server next.
+    - Turn on cameras and confirm RF camera is active.
+2. Confirm server is connected to a monitor and fully booted.
+3. For reliable connection, perform one restart cycle after initial power up:
+    - Restart hub/server once if cameras are not detected or link is unstable.
+    - Wait 30-60 seconds after restart before scanning ports.
+4. Check physical connections:
+    - Ethernet from host PC to server Ethernet port (not hub camera chain ports).
+    - Camera chain cabling is secure and in correct direction.
+5. Check host network:
+    - Ensure host PC has static IP configured for the PhaseSpace network.
+    - Verify reachability to server IP (`192.168.1.230`) using ping.
+6. Open web Configuration Manager and login with `admin / phasespace`.
+7. Scan ports and verify all expected cameras are visible.
+8. Open Master Client app and connect to the server IP.
+9. If server terminal/admin access is needed, use `root / phasespace`.
+10. After connection is healthy in Master Client, start Python code.
 
 This repository contains a Python client for PhaseSpace motion capture and reference project files. This guide is written from scratch to cover:
 
