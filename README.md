@@ -3,6 +3,35 @@
 # PhaseSpace Mocap Python Client
 # PhaseSpace Mocap Setup and Operation Guide
 
+## Windows setup scope (current)
+
+This guide is currently for the **Windows setup only**.
+Linux setup documentation will be added in a future update.
+
+## Startup flow chart (do this first)
+
+```mermaid
+flowchart TD
+    A[Switch on PhaseSpace server and camera system] --> B[Ensure server is connected to monitor]
+    B --> C[Check physical/network connections]
+    C --> D[Open web Configuration Manager at server IP]
+    D --> E[Login for web config: admin / phasespace]
+    E --> F[Verify cameras and ports]
+    F --> G[Server-level access if needed: root / phasespace]
+    G --> H[Open Master Client app on host PC]
+    H --> I[Connect to server IP and verify stream]
+    I --> J[Run code: example.py or owl.py]
+```
+
+Short sequence:
+1. Switch on server and cameras.
+2. Confirm server is connected to a monitor.
+3. Check cabling and network.
+4. Open web Configuration Manager and login with `admin / phasespace`.
+5. Open Master Client app and connect to the server.
+6. If server terminal/admin access is needed, use `root / phasespace`.
+7. Start Python code.
+
 This repository contains a Python client for PhaseSpace motion capture and reference project files. This guide is written from scratch to cover:
 
 - environment setup
@@ -28,8 +57,8 @@ Vendor PDFs included:
 ## 2) Device and login details
 
 - Device IP address: `192.168.1.230`
-- Username: `root`
-- Password: `phasespace`
+- Web Configuration Manager login: `admin` / `phasespace`
+- Server-level login: `root` / `phasespace`
 
 Keep credentials private in production environments. Rotate passwords if this repository is shared outside a trusted network.
 
