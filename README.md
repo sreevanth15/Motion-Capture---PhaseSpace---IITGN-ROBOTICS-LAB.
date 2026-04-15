@@ -14,7 +14,7 @@ For a new computer, configure a **static IPv4 address** on the Ethernet adapter 
 
 ```mermaid
 flowchart TD
-    A[Switch on PhaseSpace server and camera system] --> B[Ensure server is connected to hub [ip:10.0.0.1]]
+    A[Switch on PhaseSpace server and camera system] --> B[Ensure server is connected to hub (IP 10.0.0.1)]
     B --> C[Check physical/network connections]
     C --> D[Open web Configuration Manager at server IP]
     D --> E[Login for web config: admin / phasespace]
